@@ -1,0 +1,622 @@
+::-webkit-scrollbar {
+    display: none;
+    }
+
+
+@font-face {
+    font-family: 'Kyiv Machine';
+    src: url('fonts/Kyiv Machine.ttf');
+}
+
+@font-face {
+    font-family: 'Homkiges Caps';
+    src: url('fonts/Homkiges Caps.ttf');
+}
+
+@font-face {
+    font-family: 'Maglonyfreeversion-Regular';
+    src: url('fonts/Maglonyfreeversion-Regular.ttf');
+}
+
+
+body {
+    overflow-x: hidden;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.main-container {
+    overflow-x: hidden;
+    color: #f1f1f1;
+    background: #0F0F0F;
+    height: 100vh;
+    width: 100vw;
+    padding-right: 0;
+    font-family: 'Space Mono', monospace;
+}
+
+
+h1 {
+    position: relative;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 100;
+    font-size: 1.2rem;
+    padding-top: 20px;
+    opacity: 0;
+    animation: opacity 2s 0.5s ease forwards;
+}
+
+.title-container h1::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 90%;
+    width: 1px;
+    background: #dadada;
+    right: -5px;
+    top: 10px;
+    animation: cursor 1s infinite;
+}
+
+
+.home-container {
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-weight: 100;
+    margin-top: 2vh;
+    opacity: 0;
+    animation: opacity 2s 0.7s ease forwards;
+    padding: 0 15px;
+}
+
+.presentation p :first-child {
+    font-family: 'Space Mono', monospace;
+    text-align: center;
+    display: block;
+    font-size: 8vw;
+}
+
+.presentation p :last-child {
+    font-family: 'Maglonyfreeversion-Regular';
+    text-align: center;
+    display: block;
+    font-size: 8vw;
+}
+
+
+
+.line {
+    display: block;
+    background: #f1f1f1f1;
+    width: 0px;
+    height: 1px;
+    margin-top: 40px;
+    animation: line 1.5s 1s ease forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.projects-btn {
+    cursor: pointer;
+    background: gray;
+    border-radius: 2px;
+    opacity: 0;
+    animation: opacity 2s 2.2s ease forwards;
+}
+
+.projects-btn span {
+    display: inline-block;
+    width: 300px;
+    border: 2px solid #f1f1f1;
+    background: #0F0F0F;
+    border-radius: 3px;
+    text-align: center;
+    color: #f1f1f1;
+    font-family: 'Space Mono', monospace;
+    font-size: 2rem;
+    transition: transform 0.15s ease,
+                color 0.15s ease,
+                background 0.15s ease;
+}
+
+.projects-btn:hover span {
+    transform: translate(-8px, -8px);
+    color: #0F0F0F;
+    background: #f1f1f1;
+    border: 2px solid #0F0F0F;
+}
+
+
+
+
+.career-btn {
+    opacity: 0;
+    animation: opacity 2s 2s ease forwards;
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 50px;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 2rem;
+    color: #f1f1f1;
+    border: 2px solid #f1f1f1;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .career-btn-line {
+    position: absolute;
+    top: 45%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    width: 10000px;
+    border-bottom: 7px dashed #fff;
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: opacity 0.1s linear  ;
+  }
+  
+  .career-btn:hover .career-btn-line,
+  .career-btn:active .career-btn-line   {
+    transform: translateX(0%);
+    transition: transform 55s linear,
+                opacity 0.1s linear;
+    opacity: 1;
+  }
+
+  .career-btn-text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: opacity 0.5s linear
+  }
+  
+  .career-btn:hover .career-btn-text {
+    opacity: 0;
+    transition: opacity 0.1s linear
+  }
+
+
+
+
+
+
+
+
+
+
+
+.contact-btn {
+    opacity: 0;
+    animation: opacity 2s 2.4s ease forwards;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    border-radius: 4px;
+    width: 300px;
+    border: 2px solid #f1f1f1;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 2rem;
+    transition: transform 0.1s linear;
+}
+
+.contact-btn:hover {
+    transform: scaleY(1.2);
+    border: 2px solid #0f0f0f;
+    background : #f1f1f1;
+}
+
+.contact-btn:hover span {
+    visibility: hidden;
+}
+
+.contact-btn span::before {
+    background: #0f0f0f;
+    visibility: hidden;
+    content: "";
+    position: absolute;
+    top : 0;
+    left: 0px;
+    height: 1px;
+    width: 154px;
+    border: 1px solid #0f0f0f;
+    transform: rotate(15deg);
+    transform-origin: top left;
+}
+
+.contact-btn span::after {
+    background: #0f0f0f;
+    content: "";
+    visibility: hidden;
+    color: #f1f1f1;
+    position: absolute;
+    top : 0;
+    right: 0px;
+    height: 1px;
+    width: 154px;
+    border: 1px solid #0f0f0f;
+    transform: rotate(-15deg);
+    transform-origin: top right;
+}
+
+.contact-btn:hover span::before,
+.contact-btn:hover span::after{
+    visibility: visible;
+} 
+
+.projects-container,
+.career-container,
+.contact-container {
+    height: 100vh;
+    width: 100vw;
+    color: #fff;
+    background: #0f0f0f;
+    display: flex;
+}
+
+.projects-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+
+
+.project-nav {
+    position: absolute;
+    z-index: 1000;
+    width: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 5px;
+    left: 5%;
+    color: #f1f1f1;
+    font-size: 2rem;
+}
+
+.project-nav i {
+    cursor: pointer;
+}
+
+.project {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 5vw;
+}
+
+.project h2 {
+    font-size:2.5rem;
+    font-family: 'Space Mono', monospace;
+    margin-top: 10%;
+}
+
+.project p {
+    width: 80%;
+    max-height: 70%;
+    font-size:1.2rem;
+    font-family: 'Space Mono', monospace;
+    overflow-y: scroll;
+}
+
+.stack {
+    border-top: 1px solid #f1f1f1;
+    font-size: 4vh;
+    margin-top: 50px;
+    position: relative;
+}
+
+.stack i {
+    margin-left: 10px;
+}
+
+.restaurant,
+.dart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #0F0F0F;
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.show {
+    display: flex;
+    opacity: 1;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.career-container {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 200vh;
+    padding: 30px;
+}
+
+.career-part1,
+.career-part2 {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #f1f1f1;
+    border-radius: 30px;
+    padding: 0.5em;
+    margin: 0 5vh;
+    overflow-y: scroll;
+}
+
+
+.career-container svg {
+    height: 20vw;
+    margin: 15px 0 0 0;
+}
+
+.career-container p {
+    display: block;
+    font-size: 2vh;
+    font-family: 'Space Mono', monospace;
+    letter-spacing: 0;
+    line-height: 3.5vh;
+    padding: 1vh 1vw;
+
+}
+
+/* CONTACT CONTAINER */
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+
+.icon-btn {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border: 2px solid #f1f1f1f1;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 4rem;
+    height: 100px;
+    width: 100px;
+    transition: all 0.2s linear;
+}
+
+.icon-btn:hover {
+    color: #0f0f0f;
+    transform: translate(-3%, -3%);
+    transition: all 0.2s ease;
+    box-shadow: 3px 3px 5px grey;
+    background: #f1f1f1;
+    cursor: pointer;
+}
+
+
+
+
+/* =========== KEYFRAMES ========== */
+
+@keyframes line {
+    100% {
+        width: 100%;
+    }
+}  
+
+@keyframes opacity {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes rightToLeft {
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+@keyframes leftToRight {
+    0% {
+        transform: translateX(0px)
+    }
+    100% {
+        transform: translateX(1900px);
+    }
+}
+
+@keyframes bottomToTop {
+    100% {
+        top:0
+    }
+}
+
+
+@keyframes cursor {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .btn-container {  
+        flex-direction: row;
+    }
+    .projects-btn span,
+    .career-btn span,
+    .contact-btn span {
+        font-size: 3rem;
+    }
+    .career-btn {
+        width: 350px;
+        height: 72px;
+    }
+    .rmnbnft {
+        flex-direction: row;
+        justify-content:space-evenly;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .career-container {
+        height: 100vh;
+        justify-content: flex-start;
+    }
+
+    .career-part1,
+.career-part2 {
+    justify-content: flex-start;
+}
+
+    .career-container p {
+        line-height: 2.2vh;
+        margin: 3%;
+    }
+
+    .career-container svg {
+        height: 150px;
+    }
+    .contact-container {
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        align-items: center;
+    }
+
+    .presentation p :first-child {
+        font-size: 5vw;
+    }
+    
+    .presentation p :last-child {
+        font-size: 5vw;
+    }
+    .project-nav {
+        position: absolute;
+        z-index: 1000;
+        width: 100px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        top: 71px;
+        left: 5%;
+        color: #f1f1f1;
+        font-size: 2rem;
+    }
+
+}
+
+@media screen and (min-width: 1500px) {
+    .career-container {
+        flex-direction: row;
+
+    }
+    .career-part1,
+    .career-part2 {
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1800px) {
+
+    .career-part1,
+    .career-part2 {
+        justify-content: baseline;
+    }
+    .career-container p {
+        display: block;
+        font-size: 2.5vh;
+        font-family: 'Space Mono', monospace;
+        line-height: 3.5vh;
+        width: 800px;
+        padding: 10px;
+    }
+    .career-container svg {
+        margin: 50px;
+    }
+    .career-container {
+        height: 100vh;
+    }
+}
