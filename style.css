@@ -59,11 +59,11 @@ h1 {
     content: "";
     position: absolute;
     display: block;
-    height: 90%;
+    height: 25px;
     width: 1px;
     background: #dadada;
     right: -5px;
-    top: 10px;
+    top: 24px;
     animation: cursor 1s infinite;
 }
 
@@ -348,6 +348,7 @@ h1 {
 
 .project p {
     width: 80%;
+    max-width: 1000px;
     max-height: 70%;
     font-size:1.2rem;
     font-family: 'Space Mono', monospace;
@@ -371,13 +372,14 @@ h1 {
     top: 0;
     left: 0;
     background: #0F0F0F;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.5s linear;
     opacity: 0;
 }
 
 .show {
     display: flex;
     opacity: 1;
+    transition: opacity 0.5s 0.5s linear;
   }
 
 
@@ -396,26 +398,23 @@ h1 {
 
 .career-container {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    text-align: center;
     height: 200vh;
-    padding: 30px;
 }
 
 .career-part1,
 .career-part2 {
-    height: 80%;
-    width: 100%;
+    width: 95%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 5px solid #f1f1f1;
-    border-radius: 30px;
-    padding: 0.5em;
-    margin: 0 5vh;
+    border: 3px solid #f1f1f1;
+    border-radius: 4px;
     overflow-y: scroll;
+    padding: 10px;
+    margin: 10px;
 }
 
 
@@ -425,13 +424,12 @@ h1 {
 }
 
 .career-container p {
-    display: block;
-    font-size: 2vh;
+    /* display: block; */
+    font-size: 1rem;
     font-family: 'Space Mono', monospace;
     letter-spacing: 0;
     line-height: 3.5vh;
-    padding: 1vh 1vw;
-
+    padding:10px;
 }
 
 /* CONTACT CONTAINER */
@@ -517,6 +515,12 @@ h1 {
     }
 }
 
+@media screen and (min-width: 700px) {
+    .career-container {
+        height: 100vh
+    }
+}
+
 @media screen and (min-width: 1000px) {
     .btn-container {  
         flex-direction: row;
@@ -585,17 +589,25 @@ h1 {
 
 }
 
-@media screen and (min-width: 1500px) {
+@media screen and (min-width: 1440px) {
     .career-container {
         flex-direction: row;
-
+        justify-content: baseline;
     }
     .career-part1,
     .career-part2 {
         width: 100%;
-        height: 100%;
+        height: 95%;
+
         align-items: center;
         justify-content: center;
+    }
+    .career-container p {
+        font-size: 2.5vh;
+        font-family: 'Space Mono', monospace;
+        line-height: 3.5vh;
+        width: 100%;
+        padding: 50px;
     }
 }
 
@@ -604,14 +616,6 @@ h1 {
     .career-part1,
     .career-part2 {
         justify-content: baseline;
-    }
-    .career-container p {
-        display: block;
-        font-size: 2.5vh;
-        font-family: 'Space Mono', monospace;
-        line-height: 3.5vh;
-        width: 800px;
-        padding: 10px;
     }
     .career-container svg {
         margin: 50px;
