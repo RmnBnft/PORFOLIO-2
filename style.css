@@ -31,6 +31,10 @@ body {
     padding: 0;
 }
 
+a {
+    color: #f1f1f1;
+}
+
 
 
 .main-container {
@@ -110,8 +114,8 @@ h1 {
     display: block;
     background: #f1f1f1f1;
     width: 0px;
-    height: 1px;
-    margin-top: 40px;
+    height: 10px;
+    margin: 10px;
     animation: line 1.5s 1s ease forwards;
 }
 
@@ -169,24 +173,26 @@ h1 {
     border: 2px solid #0F0F0F;
 }
 
-
-
-
 .career-btn {
+    position: relative;
+    overflow: hidden;
     opacity: 0;
     animation: opacity 2s 2s ease forwards;
-    display: inline-block;
-    position: relative;
     width: 300px;
-    height: 50px;
-    text-align: center;
-    font-family: 'Space Mono', monospace;
-    font-size: 2rem;
-    color: #f1f1f1;
     border: 2px solid #f1f1f1;
     overflow: hidden;
     cursor: pointer;
     border-radius: 4px;
+}
+
+.career-btn span {
+    display: inline-block;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    color: #f1f1f1;
+    width: 100%;
+    font-size: 2rem;
+    transition: color 0.5s linear;
   }
   
   .career-btn-line {
@@ -211,18 +217,10 @@ h1 {
     opacity: 1;
   }
 
-  .career-btn-text {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: opacity 0.5s linear
-  }
-  
-  .career-btn:hover .career-btn-text {
-    opacity: 0;
-    transition: opacity 0.1s linear
-  }
+  .career-btn:hover span {
+    color: #0F0F0F;
+    transition: color 0.1s linear;
+}
 
   .skills-btn {
     opacity: 0;
@@ -312,7 +310,7 @@ h1 {
 
 .projects-container,
 .career-container,
-.contact-container {
+.skills-container {
     height: 100vh;
     width: 100vw;
     color: #fff;
@@ -325,7 +323,10 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-y: auto;
+    overflow-y: scroll;
+    border: 15px solid grey;
+    background: grey;
+
 }
 
 
@@ -338,7 +339,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    top: 5px;
+    top: 15px;
     left: 5%;
     color: #f1f1f1;
     font-size: 2rem;
@@ -354,11 +355,13 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 0 5vw;
+    padding: 0 5vw;
+    border: 1px solid grey;
+    border-radius: 40px;
 }
 
 .project h2 {
-    font-size:2.5rem;
+    font-size:2.2rem;
     font-family: 'Space Mono', monospace;
     margin-top: 10%;
 }
@@ -367,9 +370,9 @@ h1 {
     width: 80%;
     max-width: 1000px;
     max-height: 70%;
-    font-size:1.2rem;
+    font-size:1rem;
     font-family: 'Space Mono', monospace;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 
 .stack {
@@ -417,7 +420,7 @@ h1 {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 200vh;
+    height: 180vh;
 }
 
 .career-part1,
@@ -427,8 +430,9 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border: 3px solid #f1f1f1;
-    border-radius: 4px;
+    border: 4px solid #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #f1f1f177;
     overflow-y: scroll;
     padding: 10px;
     margin: 10px;
@@ -449,18 +453,56 @@ h1 {
     padding:10px;
 }
 
-/* CONTACT CONTAINER */
-.contact-container {
+
+/* skills CONTAINER */
+.skills-container {
     display: flex;
-    justify-content:space-around;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    height: 300vh;
+    border-bottom: 6px solid #f1f1f1;
 }
+.skills {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.skills-cells {
+    height: 200px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border: 3px SOLID #f1f1f1;
+    border-radius: 30px;
+    box-shadow: #f1f1f140 0px 0px 15px 0px;
+}
+.skills i {
+    font-size: 5rem;
+    margin: 10px 0;
+}
+.skills-cells p {
+    text-align: center;
+    display: inline-block;
+    font-size: 1.5rem;
+    margin-top: 20px;
+}
+
+
+
+
+/* CONTACT CONTAINER */
 
 .icon-btn {
     display: flex;
     justify-content:center;
     align-items: center;
-    border: 2px solid #f1f1f1f1;
+    border: 3px solid #f1f1f1f1;
     border-radius: 50%;
     text-align: center;
     font-size: 4rem;
@@ -478,6 +520,16 @@ h1 {
     cursor: pointer;
 }
 
+.contact-container {
+    width: 100vw;
+    height: 20vh;
+    color: #fff;
+    background: #0f0f0f;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 6px solid #f1f1f1;
+}
 
 
 
@@ -495,26 +547,8 @@ h1 {
     }
 }
 
-@keyframes rightToLeft {
-    100% {
-        transform: translateX(0px);
-    }
-}
 
-@keyframes leftToRight {
-    0% {
-        transform: translateX(0px)
-    }
-    100% {
-        transform: translateX(1900px);
-    }
-}
 
-@keyframes bottomToTop {
-    100% {
-        top:0
-    }
-}
 
 
 @keyframes cursor {
@@ -538,19 +572,7 @@ h1 {
 }
 
 @media screen and (min-width: 1000px) {
-    .btn-container {  
-        flex-direction: row;
-    }
-    .projects-btn span,
-    .career-btn span,
-    .contact-btn span,
-    .skills-btn span {
-        font-size: 3rem;
-    }
-    .career-btn {
-        width: 350px;
-        height: 72px;
-    }
+
     .rmnbnft {
         flex-direction: row;
         justify-content:space-evenly;
@@ -564,9 +586,9 @@ h1 {
     }
 
     .career-part1,
-.career-part2 {
-    justify-content: flex-start;
-}
+    .career-part2 {
+        justify-content: flex-start;
+    }
 
     .career-container p {
         line-height: 2.2vh;
@@ -576,12 +598,11 @@ h1 {
     .career-container svg {
         height: 150px;
     }
-    .contact-container {
-        display: flex;
-        flex-direction: row;
-        justify-content:space-around;
-        align-items: flex-end;
+
+    .projects-container p {
+        font-size: 1.2rem;
     }
+
 
     .presentation p :first-child {
         font-size: 5vw;
@@ -604,7 +625,20 @@ h1 {
         font-size: 2rem;
     }
 
-}
+    .skills-container {
+        height: 120vh;
+    }
+    
+
+    .skills {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* align-content: space-evenly; */
+        /* justify-content: center; */
+        align-items: center;
+        justify-items: center;
+    }
 
 @media screen and (min-width: 1440px) {
     .career-container {
@@ -614,11 +648,11 @@ h1 {
     .career-part1,
     .career-part2 {
         width: 100%;
-        height: 95%;
-
+        height: 90%;
         align-items: center;
         justify-content: flex-start;
         padding-top: 100px;
+        margin: 50px;
     }
     .career-container p {
         font-size: 2.5vh;
@@ -630,6 +664,12 @@ h1 {
 }
 
 @media screen and (min-width: 1800px) {
+    .btn-container {  
+        flex-direction: row;
+    }
+    .btn-container span {
+        font-size: 3rem;
+    }
 
     .career-part1,
     .career-part2 {

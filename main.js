@@ -39,7 +39,7 @@ setTimeout(() => {
 },10000)
 
 //Gestion du SCROLL en fonction du bouton cliqué
-const containers = document.querySelectorAll(".views")
+const containers = document.querySelectorAll(".view")
 const projectsBtn = document.querySelector('.projects-btn')
 const projectsContainer = document.querySelector('.projects-container')
 projectsBtn.addEventListener("click",() => {
@@ -66,6 +66,18 @@ function displayCareer() {
   currentIndex = Array.from(containers).indexOf(careerContainer);
   careerContainer.scrollIntoView({
       behavior: 'smooth',
+  });
+}
+
+const skillsBtn = document.querySelector('.skills-btn')
+const skillsContainer = document.querySelector('.skills-container')
+skillsBtn.addEventListener("click",() => {
+    displaySkills();
+})
+function displaySkills() {
+  currentIndex = Array.from(containers).indexOf(skillsContainer);
+  skillsContainer.scrollIntoView({
+      behavior: 'smooth'
   });
 }
 
