@@ -20,10 +20,15 @@ function onClick() {
 
 title.addEventListener("click", onClick);
 
+//function to type out a word one letter at a time
 function typewriter(word, index) {
+  //if index is less than the length of the word
   if (index < word.length) {
+    //run a function after 200 milliseconds
     setTimeout(() => {
+      //add a span tag with the nth letter of the word (where n is the index) to the title element
       title.innerHTML += `<span>${word[index]}</span>`;
+      //run the function again, incrementing the index by 1
       typewriter(txt, index + 1);
     }, 200);
   }
