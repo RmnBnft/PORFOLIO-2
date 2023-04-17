@@ -4,11 +4,6 @@
 
 
 @font-face {
-    font-family: 'Kyiv Machine';
-    src: url('fonts/Kyiv Machine.ttf');
-}
-
-@font-face {
     font-family: 'Homkiges Caps';
     src: url('fonts/Homkiges Caps.ttf');
 }
@@ -114,7 +109,7 @@ h1 {
     display: block;
     background: #f1f1f1f1;
     width: 0px;
-    height: 10px;
+    height: 6px;
     margin: 10px;
     animation: line 1.5s 1s ease forwards;
 }
@@ -122,7 +117,12 @@ h1 {
 
 
 
-
+.career-btn,
+.projects-btn,
+.skills-btn,
+.contact-btn {
+    box-shadow: #f1f1f140 0px 0px 20px 0px;
+}
 
 
 
@@ -261,7 +261,7 @@ h1 {
     text-align: center;
     font-family: 'Space Mono', monospace;
     font-size: 2rem;
-    transition: transform 0.1s linear;
+    transition: transform 0.2s linear;
 }
 
 .contact-btn:hover {
@@ -324,9 +324,6 @@ h1 {
     justify-content: center;
     align-items: center;
     overflow-y: scroll;
-    border: 15px solid grey;
-    background: grey;
-
 }
 
 
@@ -356,8 +353,6 @@ h1 {
     flex-direction: column;
     justify-content: space-around;
     padding: 0 5vw;
-    border: 1px solid grey;
-    border-radius: 40px;
 }
 
 .project h2 {
@@ -478,8 +473,8 @@ h1 {
     justify-content: center;
     align-items: center;
     margin: 10px;
-    border: 3px SOLID #f1f1f1;
-    border-radius: 30px;
+    border: 1px SOLID #f1f1f140;
+    border-radius: 5px;
     box-shadow: #f1f1f140 0px 0px 15px 0px;
 }
 .skills i {
@@ -531,7 +526,13 @@ h1 {
     border-top: 6px solid #f1f1f1;
 }
 
+/* =========== INTERSECTION OBSERVER ========== */
 
+.reveal {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: 0.5s linear;
+}
 
 /* =========== KEYFRAMES ========== */
 
