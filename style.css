@@ -526,13 +526,7 @@ h1 {
     border-top: 6px solid #f1f1f1;
 }
 
-/* =========== INTERSECTION OBSERVER ========== */
 
-.reveal {
-    opacity: 0;
-    transform: translateY(100px);
-    transition: 0.5s linear;
-}
 
 /* =========== KEYFRAMES ========== */
 

@@ -115,23 +115,6 @@ document.querySelector('.fa-arrow-right').addEventListener('click', () => {
 });
 
 
-// INTERSECTION OBSERVER
-const threshold = 0.2;
-const options = {
-  root: null,
-  rootMargin: '0px',
-  threshold
-}
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('reveal');
-    }
-  })
-
-
-
-
 
 
 
